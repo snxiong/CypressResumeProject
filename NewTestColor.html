@@ -34,6 +34,8 @@
 			}
 		}
 		
+	
+		// 'selectedColor' is an array variable that will hold all the needed colors (ITS A GLOBAL VARIABLE)
 		var selectedColor = ["stuff", "stuff2", "stuff3", "stuff4"];
 	
 		// GETTING THE CANVAS TO DRAW ON
@@ -419,8 +421,9 @@
 		
 		function thisFunction()
 		{
-			document.getElementById("test3").innerHTML = "inside thisFunction()";
-			document.getElementById("test4").innerHTML = "1st color = " + selectedColor[0];
+			//document.getElementById("test3").innerHTML = "inside thisFunction()";
+			document.getElementById("test3").innerHTML = "1st color = " + selectedColor[0] + "| 2nd color = " + selectedColor[1];
+			document.getElementById("test4").innerHTML = "3rd color = " + selectedColor[2] + "|  4th color = " + selectedColor[3];
 			
 			
 		}
