@@ -17,6 +17,9 @@
 	<script type="text/javascript" src="Cypress%20Resume%20-Trial%20Password%201_files/jscolor.js"></script>
 	<script type="text/javascript" src="Cypress%20Resume%20-Trial%20Password%201_files/stickytooltip.js"></script>
 
+	
+		
+
 	<script type="text/javascript">
 		var prompt_run_once = '';
 		
@@ -457,73 +460,35 @@
 								</div>
 								
 								<!--BUSINESS CARD LIVE PREVIEW-->
-								<div>
-									<canvas id="canvas" width="750" height="450" style="border:1px solid#d3d3d3;">
-									</canvas>
-									
-									<button onclick="draw(0)">
-										Black
-									</button>
-									
-									<button onclick="draw(1)">
-										Blue
-									</button>
-									
-									<button onclick="draw(2)">
-										Red
-									</button>
-									
-									<button onclick="draw(3)">
-										Violet
-									</button>
-									
-									<button onclick="draw(4)">
-										Purple
-									</button>
-									
-									<button onclick="draw(5)">
-										Aqua
-									</button>
-									
-									<button onclick="draw(6)">
-										LightBlue
-									</button>
-									
-									<button onclick="draw(7)">
-										Green
-									</button>
-									
-									<button onclick="draw(8)">
-										Lime
-									</button>
-									
-									<button onclick="draw(9)">
-										Yellow 
-									</button>
-									
-									<button onclick="draw(10)">
-										Gold 
-									</button>
-									
-									<button onclick="draw(11)">
-										LightOrange
-									</button>
-									
-									<button onclick="draw(12)">
-										Orange 
-									</button>
-									
-									
-								</div>
-									
-									
+
+								<canvas id="canvas" width="750" height="450" style="border:1px solid#d3d3d3;">
+								</canvas>
+
+								<!--- COLOR WHEEL SECTIONS	--->	
+								<canvas id="colorWheelCanvas" width="500" height="500"></canvas>
+								
+								<form>
+									<input type="radio" name="colorCombo" id="Complementary">Complementary
+									<input type="radio" name="colorCombo" id="Analogous">Analogous
+									<input type="radio" name="colorCombo" id="Triadic">Triadic<br>
+									<input type="radio" name="colorCombo" id="SplitComplementary">Split-Complementary
+									<input type="radio" name="colorCombo" id="TeTratic">TeTratic Double-Complementary
+								</form>
+								
+								<p id="colorComp"></p>
+								
+								<br>
+								
+								<script src="ColorWheel.js"></script>
+								<script src="colorDrawing.js"></script>
+								
+								<!-- END OF COLOR WHEEL SECTIONS -->
+								
 								
 								
 								<!--- BUSINESS CARD TEMPLATES---->
 								<div class="parent">
-									<img src="colorwheel.jpg" width="150" height="150">
-									<br><br>
-									
+	
 									<div class="column">
 									<img src="businesscard1.jpg"  alt="business card #1" width="250" height="150" border="1">
 									<br>
@@ -599,150 +564,7 @@
 								
 								</div>
 								
-								<!------ JAVASCRIPT ------->
-								<script>
-									// script to draw canvas
-									var canvas = document.getElementById('canvas');
-									var ctx = canvas.getContext('2d');
-									
-									function draw(trigger)
-									{
-										//if (canvas.getContext) {
-										if(trigger == 0)
-										{
-											ctx = canvas.getContext('2d');
-											ctx.clearRect(0, 0, canvas.width, canvas.height);
-											ctx.beginPath();
-											
-											ctx.fillStyle = "black"; 
-											ctx.fillRect(0, 0, 750, 75);
-											ctx.fillRect(0, 0, 75, 450);
-										}
-										else if(trigger == 1) // BLUE
-										{
-											ctx = canvas.getContext('2d');
-											ctx.clearRect(0, 0, canvas.width, canvas.height);
-											ctx.beginPath();
-											
-											ctx.fillStyle = "#1C0CA2";
-											ctx.fillRect(0, 0, 750, 75);
-											ctx.fillRect(0, 0, 75, 450);
-										}
-										else if(trigger == 2) // RED
-										{
-											ctx = canvas.getContext('2d');
-											ctx.clearRect(0, 0, canvas.width, canvas.height);
-											ctx.beginPath();
-											
-											ctx.fillStyle = "#A80F00";
-											ctx.fillRect(0, 0, 750, 75);
-											ctx.fillRect(0, 0, 75, 450);
-										}
-										else if(trigger == 3) // Violet
-										{
-											ctx = canvas.getContext('2d');
-											ctx.clearRect(0, 0, canvas.width, canvas.height);
-											ctx.beginPath();
-											
-											ctx.fillStyle = "A41453";
-											ctx.fillRect(0, 0, 750, 75);
-											ctx.fillRect(0, 0, 75, 450);
-										}
-										else if(trigger == 4)	// PURPLE
-										{
-											ctx = canvas.getContext('2d');
-											ctx.clearRect(0, 0, canvas.width, canvas.height);
-											ctx.beginPath();
-											
-											ctx.fillStyle = "#761299";
-											ctx.fillRect(0, 0, 750, 75);
-											ctx.fillRect(0, 0, 75, 450);
-										}
-										else if(trigger == 5)	// AQUA
-										{
-											ctx = canvas.getContext('2d');
-											ctx.clearRect(0, 0, canvas.width, canvas.height);
-											ctx.beginPath();
-											
-											ctx.fillStyle = "#06397C";
-											ctx.fillRect(0, 0, 750, 75);
-											ctx.fillRect(0, 0, 75, 450);
-										}
-										else if(trigger == 6)	// LightBlue
-										{
-											ctx = canvas.getContext('2d');
-											ctx.clearRect(0, 0, canvas.width, canvas.height);
-											ctx.beginPath();
-											
-											ctx.fillStyle = "#006AA9";
-											ctx.fillRect(0, 0, 750, 75);
-											ctx.fillRect(0, 0, 75, 450);
-										}
-										else if(trigger == 7)	// GREEN
-										{
-											ctx = canvas.getContext('2d');
-											ctx.clearRect(0, 0, canvas.width, canvas.height);
-											ctx.beginPath();
-											
-											ctx.fillStyle = "#067C0A";
-											ctx.fillRect(0, 0, 750, 75);
-											ctx.fillRect(0, 0, 75, 450);
-										}
-										else if(trigger == 8)	// LIME
-										{
-											ctx = canvas.getContext('2d');
-											ctx.clearRect(0, 0, canvas.width, canvas.height);
-											ctx.beginPath();
-											
-											ctx.fillStyle = "#6F8C01";
-											ctx.fillRect(0, 0, 750, 75);
-											ctx.fillRect(0, 0, 75, 450);
-										}
-										else if(trigger == 9)	// YELLOW
-										{
-											ctx = canvas.getContext('2d');
-											ctx.clearRect(0, 0, canvas.width, canvas.height);
-											ctx.beginPath();
-											
-											ctx.fillStyle = "#9A8F02";
-											ctx.fillRect(0, 0, 750, 75);
-											ctx.fillRect(0, 0, 75, 450);
-										}
-										else if(trigger == 10)	// GOLD
-										{
-											ctx = canvas.getContext('2d');
-											ctx.clearRect(0, 0, canvas.width, canvas.height);
-											ctx.beginPath();
-											
-											ctx.fillStyle = "#A07407";
-											ctx.fillRect(0, 0, 750, 75);
-											ctx.fillRect(0, 0, 75, 450);
-										}
-										else if(trigger == 11)	// LightOrange
-										{
-											ctx = canvas.getContext('2d');
-											ctx.clearRect(0, 0, canvas.width, canvas.height);
-											ctx.beginPath();
-											
-											ctx.fillStyle = "#A25B02";
-											ctx.fillRect(0, 0, 750, 75);
-											ctx.fillRect(0, 0, 75, 450);
-										}
-										else if(trigger == 12)	// ORANGE
-										{
-											ctx = canvas.getContext('2d');
-											ctx.clearRect(0, 0, canvas.width, canvas.height);
-											ctx.beginPath();
-											
-											ctx.fillStyle = "#A04200";
-											ctx.fillRect(0, 0, 750, 75);
-											ctx.fillRect(0, 0, 75, 450);
-										}
-										
-										
-									}
-								</script>
-	
+								
 					<div class="bufferbar">
 									
 					</div>
@@ -750,9 +572,6 @@
 					<div id="footer">
 						<br>
 						<div style="" align="center" >
-						
-
-							
 						
 							<span>© Copyright 2019 Cypress Information Services LLC&nbsp;|&nbsp; All Rights Reserved.</span><br>
 								<span>
